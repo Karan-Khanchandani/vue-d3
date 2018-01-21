@@ -20,12 +20,17 @@
 
 <script>
 
-import Line from '@/Line';
-import Area from '@/Area';
-import Scatter from '@/Scatter';
+import Line from './Line';
+import Area from './Area';
+import Scatter from './Scatter';
 
 export default {
   name: 'Series',
+  components: {
+    'd3__area': Area,
+    'd3__line': Line,
+    'd3__scatter': Scatter
+  },
   props: ['layout', 'series-data', 'scale']
 }
 </script>

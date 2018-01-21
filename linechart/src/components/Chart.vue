@@ -19,10 +19,14 @@
 </template>
 
 <script>
-import Axis from '@/Axis';
-import Series from '@/Series';
+import Axis from './Axis';
+import Series from './Series';
 export default {
     name: 'Chart',
+    components: {
+      'd3__axis': Axis,
+      'd3__series': Series
+    },
   props: [
     'axes',       // Chart axes
     'layout',     // Dimensions for the chart and margins

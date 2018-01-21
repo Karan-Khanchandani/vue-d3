@@ -8,11 +8,15 @@
         :point-data="pointData"
         :layout="layout"
         :scale="scale"></d3__point>
+    </g>
 </template>
 <script>
-import Point from '@/Point';
+import Point from './Point';
 export default {
   name: 'scatter',
+  components:{
+      'd3__point': Point
+  },
   data (){
       return {}
   },

@@ -1,3 +1,5 @@
+import {Chart} from './Chart';
+
 var response = {
     "data": {
       "flipbooks": {
@@ -53,9 +55,12 @@ var response = {
       })
     }
   });
-
+ 
   var d3Vis = new Vue({
     el: '#chart',
+    components: {
+      Chart
+    },
     data: {
       layout: {
         width: 800,
