@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Chart/>
+    <Chart />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import Chart from './components/Chart'
 
 export default {
   name: 'App',
+  props:['layout','chartData','axes'],
   components: {
     Chart
   }

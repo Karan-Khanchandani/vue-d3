@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import d3 from 'd3'
+
 export default {
   name: 'd3_point',
   props: ['layout', 'point-data', 'scale', 'series-id'],

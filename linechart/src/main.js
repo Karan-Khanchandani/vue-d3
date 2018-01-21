@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import d3 from 'd3'
 
 Vue.config.productionTip = false
 
@@ -69,6 +70,7 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
+  props:['layout','chartData','axes'],
   data: {
     layout: {
       width: 800,

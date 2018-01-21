@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import d3 from 'd3';
 export default {
   name : 'Axis',
   props: ['axis', 'layout','scale'],

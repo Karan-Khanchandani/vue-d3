@@ -21,6 +21,7 @@
 <script>
 import Axis from './Axis';
 import Series from './Series';
+import d3 from 'd3';
 export default {
     name: 'Chart',
     components: {
