@@ -11,21 +11,21 @@
     </g>
 </template>
 <script>
-import Point from './Point';
+import Point from './Point'
 export default {
   name: 'scatter',
-  components:{
-      'd3__point': Point
+  components: {
+    'd3__point': Point
   },
-  data (){
-      return {}
+  data () {
+    return {}
   },
   props: ['layout', 'series-data', 'scale'],
   watch: {
-      scale: {
-          deep:true,
-          handler: function(){}
-      }
+    scale: {
+      deep: true,
+      handler: function () {}
+    }
   }
 }
 </script>

@@ -20,9 +20,9 @@
 
 <script>
 
-import Line from './Line';
-import Area from './Area';
-import Scatter from './Scatter';
+import Line from './Line'
+import Area from './Area'
+import Scatter from './Scatter'
 
 export default {
   name: 'Series',

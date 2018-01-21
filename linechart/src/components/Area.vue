@@ -3,47 +3,47 @@
 </template>
 
 <script>
-import d3 from 'd3';
+import * as d3 from 'd3'
 export default {
   name: 'Area',
   props: ['layout', 'series-data', 'scale'],
-  mounted: function(){
-      this.drawArea();
+  mounted: function () {
+    this.drawArea()
   },
   methods: {
-      drawArea: function(){
-          var scale = this.scale;
-          var area = d3.area()
-          .x(function(d) {
-              return scale.x(d.timestamp);
-          })
-          .y0(scale.y(0))
-          .y1(function(d) {
-              return scale.y(d.value);
-          })
+    drawArea: function () {
+      var scale = this.scale
+      var area = d3.area()
+        .x(function (d) {
+          return scale.x(d.timestamp)
+        })
+        .y0(scale.y(0))
+        .y1(function (d) {
+          return scale.y(d.value)
+        })
 
-          var $area = d3.select(this.$refs.area);
+      var $area = d3.select(this.$refs.area)
 
-          $area.
-          datum(this.seriesData.values.filter( function(d) {
-              return typeof d.value !== typeof null;
-          }))
-          .attr('d', area);
-      }
+      $area
+        .datum(this.seriesData.values.filter(function (d) {
+          return typeof d.value !== typeof null
+        }))
+        .attr('d', area)
+    }
   },
   computed: {
-      style: function(){
-          return {
-              fill: this.scale.color(this.seriesData.id),
+    style: function () {
+      return {
+        fill: this.scale.color(this.seriesData.id),
         fillOpacity: 0.25
-          }
       }
+    }
   },
   watch: {
-      scale: {
+    scale: {
       deep: true,
-      handler: function(val, oldVal) {
-        this.drawArea();
+      handler: function (val, oldVal) {
+        this.drawArea()
       }
     }
   }
