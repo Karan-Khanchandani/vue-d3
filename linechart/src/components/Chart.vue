@@ -1,9 +1,10 @@
+
 <template id="d3__chart">
   <svg :view-box.camel="viewBox" preserveAspectRatio="xMidYMid meet">
     <g class="d3__stage" :style="stageStyle">
       <d3__axis
-                v-for="axis in _.uniq(axes)"
-                :key="axis"
+                v-for="axis in unique(axes)"
+                :key="axis.id"
                 :axis="axis"
                 :layout="layout"
                 :scale="scale"
@@ -22,6 +23,8 @@
 import Axis from './Axis'
 import Series from './Series'
 import * as d3 from 'd3'
+import * as _ from 'underscore'
+
 export default {
   name: 'Chart',
   components: {
@@ -51,22 +54,32 @@ export default {
   },
   data: function () {
     return {
-      scale: {
+      scale: {}
+    }
+  },
+  mounted: function() {
+    //console.log(this.layout);
+    debugger
+    this.scale = {
         x: this.getScaleX(),
         y: this.getScaleY(),
         color: d3.scaleOrdinal()
           .range(['#159078', '#999999'])
           .domain(['Current', 'Previous'])
       }
-    }
   },
   methods: {
+
+    unique: function (data) {
+      return _.uniq(data)
+    },
 
     // Get x-axis scale
     getScaleX: function () {
       return d3.scaleTime()
         .range([0, this.layout.width])
-        .domain(d3.extent(chartData, function (d) {
+        .domain(d3.extent(this.chartData, function (d) {
+          debugger
           return d3.utcParse('%Y-%m-%dT%H:%M:%S')(d[0]).setHours(0, 0, 0, 0)
         }))
     },

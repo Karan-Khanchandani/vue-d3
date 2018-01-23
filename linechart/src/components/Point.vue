@@ -9,7 +9,7 @@ export default {
   name: 'd3_point',
   props: ['layout', 'point-data', 'scale', 'series-id'],
   data () {
-
+    return {}
   },
   mounted () {
     this.drawPoint()

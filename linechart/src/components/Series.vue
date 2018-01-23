@@ -2,18 +2,18 @@
   <g class="d3__series">
     <d3__area
               :layout="layout"
-              :series-data="this.seriesData"
-              :scale="this.scale">
+              :series-data="seriesData"
+              :scale="scale">
     </d3__area>
     <d3__line
               :layout="layout"
-              :series-data="this.seriesData"
-              :scale="this.scale">
+              :series-data="seriesData"
+              :scale="scale">
     </d3__line>
     <d3__scatter
                  :layout="layout"
                  :series-data="this.seriesData"
-                 :scale="this.scale">
+                 :scale="scale">
     </d3__scatter>
   </g>
 </template>
