@@ -12,7 +12,10 @@ export default {
     return {
       layout: {},
       chartData: {},
-      axes: []
+      axes: [],
+      ss: {
+        s : "s"
+      }
     }
   },
   components: {
