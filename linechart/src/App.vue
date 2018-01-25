@@ -14,7 +14,6 @@ export default {
       chartData: {},
       axes: [],
       ss: {
-        s : "s"
       }
     }
   },
